@@ -1,4 +1,4 @@
-# Code Overview
+## Code Overview
 
 This workflow:
 
@@ -16,7 +16,7 @@ Creates visualizations to support interpretation.
 
 This enables downstream tasks such as seasonal change detection, vegetation anomaly analysis, or self-supervised representation learning.
 
-# Repository Structure
+## Repository Structure
 ndvi_timeseries/
 │
 ├── data/                    # Optional local cache for STAC assets
@@ -31,13 +31,13 @@ ndvi_timeseries/
 ├── README.md                # ← you are here
 └── environment.yml          # Required packages
 
-# Region of Interest Example (Buffalo, NY)
+## Region of Interest Example (Buffalo, NY)
 bbox = [-78.90, 42.80, -78.78, 42.95]
 
 
 You can swap this with any region in bbox_config.py.
 
-# NDVI Computation
+## NDVI Computation
 
 NDVI is computed as:
 
@@ -52,7 +52,7 @@ RED = B04
 
 Cloud filtering is optional (SCL mask recommended).
 
-# Visualization Helpers
+## Visualization Helpers
 
 This project includes helper functions for exploring NDVI quality, patch-level variation, and temporal dynamics.
 
@@ -94,7 +94,7 @@ selecting patches of interest
 
 comparing seasons
 
-# Patch Visualizations During Model Training
+## Patch Visualizations During Model Training
 
 The pipeline includes:
 
@@ -124,7 +124,7 @@ spatial context
 
 You can add PCA or UMAP maps to visualize embedding clusters.
 
-# Interpreting the Outputs
+## Interpreting the Outputs
 NDVI Histogram
 
 Peak near 0.6–0.8 → healthy vegetation
@@ -153,7 +153,7 @@ disturbance events
 
 year-over-year anomalies
 
-# Requirements
+## Requirements
 rasterio
 numpy
 torch
@@ -169,29 +169,29 @@ If using Prithvi or GeoFM:
 
 pip install torchgeo
 
-# Quickstart
+## Quickstart
 from stac_utils import fetch_s2_collection
 from ndvi_compute import compute_ndvi
 from patching import extract_patches
 from model_inference import embed_patches
 from visualization import plot_ndvi_hist, plot_ndvi_timeseries, show_ndvi_map
 
-# 1. Search STAC
+ 1. Search STAC
 items = fetch_s2_collection(bbox)
 
-# 2. Compute NDVI
+ 2. Compute NDVI
 ndvi_list = compute_ndvi(items)
 
-# 3. Patch extraction
+ 3. Patch extraction
 patches = extract_patches(ndvi_list, patch_size=256)
 
-# 4. Embeddings
+ 4. Embeddings
 emb = embed_patches(patches, model="prithvi")
 
-# 5. Visualization
+ 5. Visualization
 plot_ndvi_timeseries(emb, ndvi_list)
 
-# Notes
+## Notes
 
 Supports Buffalo, New York State, or any global region with Sentinel-2 coverage.
 
