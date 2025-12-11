@@ -189,12 +189,11 @@ emb = embed_patches(patches, model="prithvi")
  5. Visualization
 plot_ndvi_timeseries(emb, ndvi_list)
 
-Notes
-This code is adopted from GeoFM288KC, Fall 2025. 
-
-
+Note:
 Supports Buffalo, New York State, or any global region with Sentinel-2 coverage.
 
 Designed to be modular for fine-tuning or zero-shot embedding extraction.
 
 Works for multiyear time series.
+
+Note: This code is adopted from GeoFM288KC, Fall 2025. 
