@@ -1,5 +1,3 @@
-This code is adopted from GeoFM288KC, Fall 2025. 
-
 ## Code Overview
 
 This workflow:
@@ -191,7 +189,9 @@ emb = embed_patches(patches, model="prithvi")
  5. Visualization
 plot_ndvi_timeseries(emb, ndvi_list)
 
-## Notes
+Notes
+This code is adopted from GeoFM288KC, Fall 2025. 
+
 
 Supports Buffalo, New York State, or any global region with Sentinel-2 coverage.
 
