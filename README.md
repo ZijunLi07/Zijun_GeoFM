@@ -78,8 +78,6 @@ Useful for:
 
 phenology
 
-drought signatures
-
 recovery after disturbance
 
 inter-year comparison
